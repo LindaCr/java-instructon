@@ -6,25 +6,31 @@ public class StudentRegistrationApp {
 		System.out.println("Student Registration Form");
 		
 		Scanner sc= new Scanner(System.in);
-		
+		System.out.println();
 	
-		System.out.println("Enter first name: ");
-		String sentence1= sc.nextLine();
-		System.out.println(sentence1);
+		System.out.print("Enter first name: ");
+		String firstName= sc.next();
+		System.out.println(firstName);
 		
 		System.out.println("Enter Last Name: ");
-		String sentence2= sc.nextLine();
-		System.out.println(sentence2);
+		String lastName= sc.next();
+		System.out.println(lastName);
 		
 		System.out.println("Enter Year of Birth: ");
-		String sentence3= sc.nextLine();
-		System.out.println(sentence3);
+		int birthYear= sc.nextInt();
+		System.out.println(birthYear);
 		
-		System.out.println("Welcome " + sentence1+" "+sentence2+ "!");
+		//biz logic
+		//String fullName= firstName+" "+ lastName+ "!";
+		//String tempPwd= firstName+ "*"+birthYear;
+		//instead of establishing logic in sysout
+		
+		System.out.println("Welcome " + firstName+" "+lastName+ "!");
 		System.out.println("Your registration is complete.");
-		System.out.println("Your temporary password is: " +sentence1+"*"+sentence3);
+		System.out.println("Your temporary password is: " +firstName+"*"+birthYear);
 		
-
+		sc.close();
+		System.out.println("Bye");
 	}
 
 }
