@@ -1,0 +1,83 @@
+
+public class Movie {
+
+	    //p 217 business class, pojo, or javabean
+		//1.create instance variables
+		//2.generate or create constructors
+		//3.generate or create getters and setters
+		//4.Optional-toString()
+	
+	private int ID;
+	private String title;
+	private int year;
+	private String rating;
+	private String director;
+	
+	
+	public Movie(int iD, String title, int year, String rating, String director) {
+		super();
+		ID = iD;
+		this.title = title;
+		this.year = year;
+		this.rating = rating;
+		this.director = director;
+	}
+
+
+	public int getID() {
+		return ID;
+	}
+
+
+	public void setID(int iD) {
+		ID = iD;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public int getYear() {
+		return year;
+	}
+
+
+	public void setYear(int year) {
+		this.year = year;
+	}
+
+
+	public String getRating() {
+		return rating;
+	}
+
+
+	public void setRating(String rating) {
+		this.rating = rating;
+	}
+
+
+	public String getDirector() {
+		return director;
+	}
+
+
+	public void setDirector(String director) {
+		this.director = director;
+	}
+	
+	
+	
+
+	
+	
+	
+	
+}
