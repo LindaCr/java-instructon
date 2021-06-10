@@ -78,4 +78,12 @@ public class Console {
         }
         return d;
     }
+    public static String getLine(String prompt) {
+        System.out.print(prompt);
+        String s = sc.nextLine();  // read user entry
+        //sc.nextLine();  // discard any other data entered on the line
+        return s;
+    }
+  
+    
 }
