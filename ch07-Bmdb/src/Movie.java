@@ -7,16 +7,16 @@ public class Movie {
 		//3.generate or create getters and setters
 		//4.Optional-toString()
 	
-	private int ID;
+	private int id;
 	private String title;
 	private int year;
 	private String rating;
 	private String director;
 	
 	
-	public Movie(int iD, String title, int year, String rating, String director) {
+	public Movie(int id, String title, int year, String rating, String director) {
 		super();
-		ID = iD;
+		this.id = id;
 		this.title = title;
 		this.year = year;
 		this.rating = rating;
@@ -24,13 +24,18 @@ public class Movie {
 	}
 
 
-	public int getID() {
-		return ID;
+	public Movie() {
+		
 	}
 
 
-	public void setID(int iD) {
-		ID = iD;
+	public int getid() {
+		return id;
+	}
+
+
+	public void setID(int id) {
+		this.id = id;
 	}
 
 
@@ -72,11 +77,12 @@ public class Movie {
 	public void setDirector(String director) {
 		this.director = director;
 	}
-	
-	
-	
 
-	
+
+	@Override
+	public String toString() {
+		return title+"("+year+"), rated "+rating+", "+"directed by "+director;
+	}
 	
 	
 	
