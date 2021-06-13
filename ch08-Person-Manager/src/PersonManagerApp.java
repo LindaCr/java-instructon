@@ -1,3 +1,4 @@
+
 import com.util.Console;
 
 public class PersonManagerApp {
@@ -11,28 +12,30 @@ public class PersonManagerApp {
 			
 			
 			
-			String person=Console.getString("Create customer or employee? c/e", 
+			String type=Console.getString("Create customer or employee? c/e", 
 					"c", "e");
-			if (person.equalsIgnoreCase("c")) {
-				String firstName=Console.getString("Enter First Name: ");
-				String lastName=Console.getString("Enter Last Name: ");
+			Person p;
+			String firstName=Console.getString("First Name: ");
+			String lastName=Console.getString("Last Name: ");
+			
+			if (type.equalsIgnoreCase("c")) {
 				String custNumber=Console.getString("Enter Customer Number: ");
-				System.out.println("You entered a new customer: \nName: "+
-								firstName+" "+lastName+"\nCustomer Number: "+custNumber);
+				Customer c= new Customer(firstName, lastName, custNumber);
+				p=c;
+			}
+			
+			else  {
 				
-			}
-			
-			else if (person.equalsIgnoreCase("e")) {
-				String firstName=Console.getString("Enter First Name: ");
-				String lastName=Console.getString("Enter Last Name: ");
 				String ssn=Console.getString("Enter SSN: ");
-				String last4=ssn.substring(7);
-				System.out.println("You entered a new Employee: \nName: "
-								+firstName+" "+lastName+"\nSSN: xxx-xx-"+last4);
+				Employee e= new Employee(firstName, lastName, ssn);
+				p=e;
 			}
 			
-			
-			
+			System.out.println();
+			Class c=p.getClass();
+			String className=c.getName();
+			System.out.println("You entered a new "+className+":");
+			System.out.println(p);
 			
 			
 			
