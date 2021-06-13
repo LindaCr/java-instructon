@@ -41,7 +41,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return super.toString()+"Name "+firstName+lastName;
+		return "Name: "+firstName+lastName;
 	}
 	
 	
