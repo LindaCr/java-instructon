@@ -115,4 +115,19 @@ public class Console {
         return s;
     }
     
+    public static String getStringThree(String prompt, String s1, String s2, String s3) {
+        String s = "";
+        boolean isValid = false;
+        while (!isValid) {
+            s = getString(prompt, true);
+            if (!s.equalsIgnoreCase(s1) && !s.equalsIgnoreCase(s2) && !s.equalsIgnoreCase(s3)) {
+                System.out.println("Error! Entry must be '" + s1 + "' or '" +
+                        s2 +" or "+s3+ "'. Try again.");
+            } else {
+                isValid = true;
+            }
+        }
+        return s;
+    }
+    
 }
