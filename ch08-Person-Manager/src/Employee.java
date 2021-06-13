@@ -8,10 +8,14 @@ public class Employee extends Person {
 		ssn="";
 	}
 
-	public Employee(String ssn) {
-		super();
+	
+
+	public Employee(String firstName, String lastName, String ssn) {
+		super(firstName, lastName);
 		this.ssn = ssn;
 	}
+
+
 
 	public String getSsn() {
 		return ssn;
@@ -21,11 +25,11 @@ public class Employee extends Person {
 		this.ssn = ssn;
 	}
 
-	String last4=ssn.substring(7);
+
 	
 	@Override
 	public String toString() {
-		return super.toString()+"SSN: xxx-xx-"+last4;
+		return super.toString()+"\nSSN: xxx-xx-"+ssn.substring(7);
 	}
 	
 	
