@@ -9,10 +9,14 @@ public class Customer extends Person {
 		custNumber="";
 	}
 
-	public Customer(String custNumber) {
-		super();
+	
+
+	public Customer(String firstName, String lastName, String custNumber) {
+		super(firstName, lastName);
 		this.custNumber = custNumber;
 	}
+
+
 
 	public String getCustNumber() {
 		return custNumber;
@@ -24,7 +28,7 @@ public class Customer extends Person {
 
 	@Override
 	public String toString() {
-		return super.toString()+"Customer Number: "+custNumber;
+		return super.toString()+"\nCustomer Number: "+custNumber;
 	}
 	
 	
