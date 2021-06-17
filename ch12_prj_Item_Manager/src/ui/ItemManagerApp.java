@@ -9,6 +9,7 @@ import business.Item;
 
 public class ItemManagerApp {
 	private static List<Item> items;
+	private static final String ITEM_NOT_FOUND_MSG="No item found for number: ";
 
 	public static void main(String[] args) {
 		// initialize items list and add some office items
@@ -46,7 +47,11 @@ public class ItemManagerApp {
 				Item item=getItem(nbr);
 				System.out.println("Get an Item:");
 				System.out.println("=================");
+				if (item!=null) {
 				System.out.println(item);
+				}else {
+					System.out.println(ITEM_NOT_FOUND_MSG+nbr);
+				}
 				break;
 			case 3:
 				// add an item
@@ -57,7 +62,7 @@ public class ItemManagerApp {
 				System.out.println("Add an Item:");
 				System.out.println("=================");
 				int nbr1=Console.getInt("Item Number: ");
-				String item1=Console.getString("Item Description: ");
+				String item1=Console.getLine("Item Description: ");
 				items.add(new Item(nbr1, item1));
 				System.out.println("You added a "+item1+"! ");
 				break;
@@ -70,10 +75,16 @@ public class ItemManagerApp {
 				// - if item found, prompt user for new description
 				// - change the item description (hint: use setter)
 				//   and display success msg
-			
 				System.out.println("Update an Item:");
 				System.out.println("=================");
-				
+			    nbr=Console.getInt("Item number to retrieve: ");
+				item=getItem(nbr);
+				if (item!=null) {
+					item.setDescription(Console.getLine("New description: "));
+					System.out.println("Item updated!");
+				}else {
+					System.out.println(ITEM_NOT_FOUND_MSG+nbr);
+				}
 				break;
 			case 5:
 				// delete an item
@@ -82,10 +93,16 @@ public class ItemManagerApp {
 				//   that matches the number entered
 				// - if item not found, print message
 				// - if item found, delete it and display success msg
-				int itemNbr=Console.getInt("Number to remove: ");
-				dropItem(itemNbr);
 				System.out.println("Delete an Item:");
 				System.out.println("=================");
+			    nbr=Console.getInt("Item number to delete: ");
+						item=getItem(nbr);
+						if (item!=null) {
+							items.remove(item);
+							System.out.println("Item deleted: "+item);
+						}else {
+							System.out.println(ITEM_NOT_FOUND_MSG+nbr);
+						}
 				break;
 			case 9:
 				// exit
@@ -119,33 +136,8 @@ public class ItemManagerApp {
 		System.out.println("9 - Exit");
 		System.out.println();
 	}
+	
 
-	private static boolean validateItemNumber(int itemNbr) {
-		boolean found=false;
-		if (itemNbr>0 && itemNbr<=items.size()) {
-			found=true;
-		}
-		
-		return found;
-	}
-	
-	private static void dropItem(int itemNbr) {
-		if (validateItemNumber(itemNbr)) {
-			Item item=items.remove(itemNbr-1);
-			System.out.println(item+" was dropped.");	
-		}else {
-			System.out.println("Invalid item number.");
-		}
-	}
-	
-	private static void editNumber(int itemNbr) {
-		if (validateItemNumber(itemNbr)) {
-			String name=Console.getLine("Updated name: ");
-			//items.set(itemNbr, name);
-			System.out.println("Item number "+itemNbr+" was updated.");
-		}else {
-			System.out.println("Invalid item number.");
-		}
-	}
+
 	
 }
