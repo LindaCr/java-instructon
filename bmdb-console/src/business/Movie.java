@@ -11,7 +11,9 @@ public class Movie {
 	
 	public Movie() {
 		super();
+		
 	}
+
 
 
 	public Movie(int id, String title, int year, String rating, String director) {
@@ -23,6 +25,14 @@ public class Movie {
 		this.director = director;
 	}
 
+	public Movie(String title, int year, String rating, String director) {
+		super();
+		this.title=title;
+		this.year=year;
+		this.rating=rating;
+		this.director=director;
+	}
+	
 
 	public int getId() {
 		return id;
@@ -76,7 +86,7 @@ public class Movie {
 
 	@Override
 	public String toString() {
-		return "Movie [id=" + id + ", title=" + title + ", year=" + year + ", rating=" + rating + ", director="
+		return "Movie [ title=" + title + ", year=" + year + ", rating=" + rating + ", director="
 				+ director + "]";
 	}
 	
