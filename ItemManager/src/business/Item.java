@@ -7,8 +7,9 @@ public class Item {
 	
 	
 	
-	public Item() {
+	public Item(String desc) {
 		super();
+		this.description=desc;
 	}
 
 
