@@ -1,54 +1,65 @@
 package business;
 
+import java.time.LocalDate;
+
 public class Actor {
 
-	private int ID;
-	private String firstname;
-	private String lastname;
+	private int id;
+	private String firstName;
+	private String lastName;
 	private String gender;
-	
+	private LocalDate birthdate;
 	
 	public Actor() {
 		super();
 	}
 
 
-	public Actor(int iD, String firstname, String lastname, String gender) {
+	public Actor(int id, String firstName, String lastName, String gender, LocalDate birthdate) {
 		super();
-		ID = iD;
-		this.firstname = firstname;
-		this.lastname = lastname;
+		id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
 		this.gender = gender;
+		this.birthdate=birthdate;
+	}
+
+	public Actor(String firstName, String lastName, String gender, LocalDate birthdate) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.gender = gender;
+		this.birthdate=birthdate;
+	}
+
+	
+	public int getid() {
+		return id;
 	}
 
 
-	public int getID() {
-		return ID;
+	public void setid(int id) {
+		id = id;
 	}
 
 
-	public void setID(int iD) {
-		ID = iD;
+	public String getFirstName() {
+		return firstName;
 	}
 
 
-	public String getFirstname() {
-		return firstname;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public String getLastName() {
+		return lastName;
 	}
 
 
-	public String getLastname() {
-		return lastname;
-	}
-
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 
@@ -61,12 +72,25 @@ public class Actor {
 		this.gender = gender;
 	}
 
+	public LocalDate getBirthdate() {
+		return birthdate;
+	}
+
+
+	public void setBirthdate(LocalDate birthdate) {
+		this.birthdate = birthdate;
+	}
+
 
 	@Override
 	public String toString() {
-		return "Actor [ID=" + ID + ", firstname=" + firstname + ", lastname=" + lastname + ", gender=" + gender + "]";
+		return "Actor [ID=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", gender=" + gender
+				+ ", birthdate=" + birthdate + "]";
 	}
-	
+
+	public String getFullName() {
+		return firstName+" "+lastName;
+	}
 	
 	
 }
