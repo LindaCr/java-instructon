@@ -7,7 +7,7 @@ import db.UserDB;
 import interfaces.DAO;
 
 public class PrsManagerApp {
-	private static final String ITEM_NOT_FOUND= "No user found for id: ";
+	private static final String USER_NOT_FOUND= "No user found for id: ";
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the PRS Manager App");
@@ -39,7 +39,7 @@ public class PrsManagerApp {
 					System.out.println("User found: "+user);
 				}
 				else {
-					System.out.println(ITEM_NOT_FOUND+ id);
+					System.out.println(USER_NOT_FOUND+ id);
 				}
 				break;
 			case 3:
@@ -54,9 +54,15 @@ public class PrsManagerApp {
 				String phone=Console.getLine("Phone number (xxx-xxx-xxxx): ");
 				String email=Console.getLine("Email: ");
 				//reviewer
+				//String rvwStr=Console.getString("Reviewer y/n: ", "y", "n");
+				//boolean rvw= (rvwStr.equalsIgnoreCase("y")) ? true:false;
+				boolean rvw=Console.getBoolean("Reviewer y/n: ");
 				//admin
-				if    (usersDAO.add(new User(username, password, firstName, lastName, phone, email))) {
-					System.out.println("Item added!");
+				//String admStr=Console.getString("Admin y/n: ", "y", "n");
+				//boolean adm= (admStr.equalsIgnoreCase("y")) ? true: false;
+				boolean adm=Console.getBoolean("Admin y/n: ");
+				if    (usersDAO.add(new User(username, password, firstName, lastName, phone, email, rvw, adm))) {
+					System.out.println("User added!");
 				}
 				else {
 					System.out.println("Error adding user.");
@@ -75,7 +81,7 @@ public class PrsManagerApp {
 					System.out.println("User updated!");
 				}
 				else {
-					System.out.println(ITEM_NOT_FOUND+ id);
+					System.out.println(USER_NOT_FOUND+ id);
 				}
 				break;
 			case 5:
@@ -89,7 +95,7 @@ public class PrsManagerApp {
 					System.out.println("User deleted: "+user);
 				}
 				else {
-					System.out.println(ITEM_NOT_FOUND+ id);
+					System.out.println(USER_NOT_FOUND+ id);
 				}
 				break;
 			case 99:
