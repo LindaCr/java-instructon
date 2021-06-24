@@ -34,9 +34,8 @@ public class User {
 		this.admin = admin;
 	}
 	
-
 	public User(String username, String password, String firstName, String lastName, String phone,
-			String email) {
+			String email, boolean reviewer, boolean admin) {
 		super();
 		this.username = username;
 		this.password = password;
@@ -44,8 +43,10 @@ public class User {
 		this.lastName = lastName;
 		this.phone = phone;
 		this.email = email;
-
+		this.reviewer = reviewer;
+		this.admin = admin;
 	}
+
 
 
 
