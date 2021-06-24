@@ -129,5 +129,12 @@ public class Console {
         }
         return s;
     }
+     
+    //prompt the user for yes/no response and convert to boolean
+    public static boolean getBoolean(String prompt) {
+    	String resp= getString(prompt, "y", "n");
+    	return resp.equalsIgnoreCase("y") ? true: false;
+    }
+    
     
 }
