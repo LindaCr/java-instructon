@@ -91,8 +91,11 @@ public class UserDB extends BaseDB implements DAO<User> {
 
 	private User getUserFromRow(ResultSet rs) throws SQLException {
 		//for each row parse an item
-		int id=rs.getInt(1);
-		String username= rs.getString(2);
+		//examples for getting columns by item name and number
+		//do not mix styles on a regular basis
+		//p 681
+		int id=rs.getInt("ID");
+		String username= rs.getString("Username");
 		String password= rs.getString(3);
 		String firstName= rs.getString(4);
 		String lastName= rs.getString(5);
@@ -103,5 +106,7 @@ public class UserDB extends BaseDB implements DAO<User> {
 		User user=new User (id, username, password, firstName, lastName, phone, email, reviewer, admin);
 		return user;
 	}
+	
+	
 	
 }
