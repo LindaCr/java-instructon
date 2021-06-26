@@ -2,6 +2,8 @@ package business;
 
 public class Movie {
 
+
+
 	private String title;
 	private int year;
 	private double rating;
@@ -47,6 +49,12 @@ public class Movie {
 
 	public void setRating(double rating) {
 		this.rating = rating;
+	}
+
+
+	@Override
+	public String toString() {
+		return title + "("+year+")" + "rating: "+rating;
 	}
 	
 	
