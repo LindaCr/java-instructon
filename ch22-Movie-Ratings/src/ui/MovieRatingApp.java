@@ -9,6 +9,7 @@ import business.Movie;
 import business.MovieCollection;
 
 public class MovieRatingApp {
+	
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Movie Rating App");
