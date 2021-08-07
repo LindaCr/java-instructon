@@ -5,7 +5,7 @@ public class FactorialCalculatorApp {
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Factorial Calculator");
 		System.out.println();
-		Scanner sc= new Scanner(System.in);
+		
 		
 		
 		String choice="y";
@@ -26,7 +26,7 @@ public class FactorialCalculatorApp {
 		}
 		
 		
-		sc.close();
+		
 		System.out.println("Peace");
 
 	}

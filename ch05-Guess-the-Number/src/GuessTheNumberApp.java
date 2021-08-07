@@ -18,7 +18,7 @@ public class GuessTheNumberApp {
 				". "+ "Try to guess it!");
 			
 			int number=getRandomNumber(LIMIT);
-			System.out.println("Hint: the number is: "+number);
+			
 			System.out.println();
 			int count=0;
 			int guess=0;
@@ -54,7 +54,7 @@ public class GuessTheNumberApp {
 		System.out.println("Peace");
 	}
 	private static void printWinner(int count) {
-		System.out.println("You got it in"+count+"tries.");
+		System.out.println("You got it in "+count+" tries.");
 		if (count<=3) {
 			System.out.println("Great job! You are awesome!");
 		}
@@ -86,10 +86,7 @@ public class GuessTheNumberApp {
 				isValid=true;
 			}
 		}
-				
-		
-		
-		
+			
 		return str;
 	}
 	public static int getIntWithinRange(Scanner sc, String prompt,
