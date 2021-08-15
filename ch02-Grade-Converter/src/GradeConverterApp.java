@@ -6,6 +6,7 @@ public class GradeConverterApp {
 		System.out.println("Welcome to the Letter Grade Converter");
 		System.out.println();
 		
+		//add scanner to read input
 		Scanner sc= new Scanner(System.in);
 		
 		String choice= "y";
