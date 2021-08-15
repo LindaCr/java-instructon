@@ -43,13 +43,13 @@ public class GuessTheNumberApp {
 			
 			printWinner(count);
 			System.out.println();
-			
+			//call method from below main method
 			choice= getRequiredString(sc, "Try Again? y/n", "y", "n");
 		
 			
 		}
 		
-		
+		System.out.println();
 		sc.close();
 		System.out.println("Peace");
 	}
