@@ -13,8 +13,9 @@ public class BmdbConsoleApp {
 		String rating=Console.getString("Rating? ");
 		String director=Console.getLine("Director? ");
 		
+		//make a new movie object
 		Movie m1=new Movie(id, title, year, rating, director);
-		
+		System.out.println();
 		System.out.println("Movie Summary: ");
 		System.out.println("===============");
 		System.out.println(m1);
