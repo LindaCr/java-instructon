@@ -5,6 +5,7 @@ public class PersonManagerApp {
 
 	public static void main(String[] args) {
 		System.out.println("Welcome to the Person Manager");
+		System.out.println();
 
 		String choice="y";
 		while (choice.equalsIgnoreCase("y")) {
@@ -34,6 +35,7 @@ public class PersonManagerApp {
 			System.out.println();
 			Class c=p.getClass();
 			String className=c.getName();
+			System.out.println("---------------------------------");
 			System.out.println("You entered a new "+className+":");
 			System.out.println(p);
 			
